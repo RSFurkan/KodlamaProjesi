@@ -12,12 +12,10 @@ namespace Core.DataAccess
     {
         T Add(T entity);
         T Update(T entity);
-        void Delete(T entity);
-        IEnumerable<T> GetList(Expression<Func<T, bool>> expression = null);
+        void Delete(T entity); 
         Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>> expression = null);
         T Get(Expression<Func<T, bool>> expression);
-        Task<T> GetAsync(Expression<Func<T, bool>> expression);
-        int SaveChanges();
+        Task<T> GetAsync(Expression<Func<T, bool>> expression); 
         Task<int> SaveChangesAsync();
         IQueryable<T> Query(); 
         

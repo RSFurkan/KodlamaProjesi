@@ -30,7 +30,8 @@ namespace Business.Handlers.PersonelDepartmans.Commands
                 _personelDepartmanRepository = personelDepartmanRepository;
                 _mediator = mediator;
             }
-           // [ValidationAspect(typeof(CreatePersonelDepartmentValidator))]
+            // validation burada gerçekleşecek : todo 
+            // [ValidationAspect(typeof(CreatePersonelDepartmentValidator))]
 
             public async Task<IResult> Handle(UpdatePersonelDepartmanComand request, CancellationToken cancellationToken)
             {

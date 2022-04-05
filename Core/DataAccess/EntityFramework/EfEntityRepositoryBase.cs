@@ -57,11 +57,7 @@ namespace Core.DataAccess.EntityFramework
             return expression == null ? await Context.Set<TEntity>().ToListAsync() :
                  await Context.Set<TEntity>().Where(expression).ToListAsync();
         }
-
-        public int SaveChanges()
-        {
-            return Context.SaveChanges();
-        }
+         
 
         public Task<int> SaveChangesAsync()
         {
