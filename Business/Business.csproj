@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\Departman\ValidationMessages\" />
+    <Folder Include="Handlers\Departman\Queries\" />
+    <Folder Include="Handlers\PersonelDepartman\Commands\" />
+    <Folder Include="Handlers\PersonelDepartman\Queries\" />
+    <Folder Include="Handlers\PersonelDepartman\ValidationMessages\" />
+    <Folder Include="Handlers\PersonelDepartman\ValidationRules\" />
+    <Folder Include="Handlers\PersonelOrnekDataTable\Commands\" />
+    <Folder Include="Handlers\PersonelOrnekDataTable\Queries\" />
+    <Folder Include="Handlers\PersonelOrnekDataTable\ValidationMessages\" />
+    <Folder Include="Handlers\PersonelOrnekDataTable\ValidationRules\" />
+    <Folder Include="Handlers\PersonelUnvan\Commands\" />
+    <Folder Include="Handlers\PersonelUnvan\Queries\" />
+    <Folder Include="Handlers\PersonelUnvan\ValidationMessages\" />
+    <Folder Include="Handlers\PersonelUnvan\ValidationRules\" />
+    <Folder Include="Handlers\Personel\Commands\" />
+    <Folder Include="Handlers\Personel\Queries\" />
+    <Folder Include="Handlers\Personel\ValidationMessages\" />
+    <Folder Include="Handlers\Personel\ValidationRules\" />
+    <Folder Include="Handlers\Unvan\Commands\" />
+    <Folder Include="Handlers\Unvan\Queries\" />
+    <Folder Include="Handlers\Unvan\ValidationMessages\" />
+    <Folder Include="Handlers\Unvan\ValidationRules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.4.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>
