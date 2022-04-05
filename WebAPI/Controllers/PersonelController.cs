@@ -17,6 +17,23 @@ namespace WebAPI.Controllers
     public class PersonelController : BaseApiController
     {
 
+       /// <summary>
+       /// Personel dropdown list
+       /// </summary>
+       /// <returns></returns>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Departman>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getpersonellookup")]
+        public async Task<IActionResult> GetLookUpList()
+        {
+            var result = await Mediator.Send(new GetPersonelsLookUpQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
         /// <summary>
         /// personel list
         /// </summary>

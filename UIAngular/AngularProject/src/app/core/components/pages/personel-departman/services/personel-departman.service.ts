@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LookUp } from 'src/app/core/models/lookUp';
 import { environment } from 'src/environments/environment';
 import { PersonelDepartman } from '../models/personel-departman';
 
@@ -29,4 +30,7 @@ export class PersonelDepartmentService {
     delete(id: number) {
         return this.httpClient.request('delete', environment.getApiUrl + '/personeldepartman/', { body: { id: id } });
       }
+      getdepartmentlookup(): Observable<LookUp[]> {
+        return this.httpClient.get<LookUp[]>(environment.getApiUrl + '/departman/getdepartmentlookup')
+    }
 }

@@ -10,7 +10,8 @@ namespace Entities.Concrete
         public string Ad { get; set; }
         public string SoyAd { get; set; }   
         public string Cinsiyet { get; set; }
-        public string CepTelefonu { get; set; }  
+        public string CepTelefonu { get; set; } 
+        public string EvTelefonu { get; set; }  
         public string MailAdresi { get; set; }
         //Bir personel birden fazla kez işe girip çıkabilir.
         public ICollection<PersonelOrnekDataTable> PersonelOrnekDataTables { get; set; }

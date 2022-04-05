@@ -10,8 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 declare var jQuery: any;
 @Component({
     selector: 'app-personel-unvan',
-    templateUrl: './personel-unvan.component.html',
-    styleUrls: ['./personel-unvan.component.scss']
+    templateUrl: './personel-unvan.component.html' 
 })
 
 
@@ -89,6 +88,14 @@ export class PersonelUnvanComponent implements AfterViewInit, OnInit {
             this.configDataTable();
         })
     }
+    applyFilter(event: Event) {
+		const filterValue = (event.target as HTMLInputElement).value;
+		this.dataSource.filter = filterValue.trim().toLowerCase();
+
+		if (this.dataSource.paginator) {
+			this.dataSource.paginator.firstPage();
+		}
+	}
     configDataTable(): void {
 		this.sort.active = "id";
 		this.sort.direction = "desc";

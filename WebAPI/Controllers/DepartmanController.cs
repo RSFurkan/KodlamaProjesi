@@ -35,7 +35,23 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result.Message);
         }
-
+        /// <summary>
+        /// department dropdownlist
+        /// </summary>
+        /// <returns></returns>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Departman>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getdepartmentlookup")]
+        public async Task<IActionResult> GetLookUpList()
+        {
+            var result = await Mediator.Send(new GetDepartmentsLookUpQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
         /// <summary>
         /// Add Department.
         /// </summary>

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Business.Handlers.Unvans.ValidationMessages
 {
-    internal class EntitySpesificMessages : Messages
+    public class EntitySpesificMessages : Messages
     {
+
     }
 }

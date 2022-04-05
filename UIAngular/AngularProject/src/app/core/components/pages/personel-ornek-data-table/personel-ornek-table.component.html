@@ -1,0 +1,79 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste </h4>
+                  
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <div class="col-md-4 pull-right">
+                                <mat-form-field>
+                                    <mat-label>Filter</mat-label>
+                                    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+                                </mat-form-field>
+                            </div>
+                            <table mat-table [dataSource]="dataSource" matSort>
+
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Id'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="sicilNumarasi">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'sicilNumarasi'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.sicilNumarasi}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="ad">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'ad'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.ad}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="soyad">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'soyad'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.soyad}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="ceptelefonu">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'ceptelefonu'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.ceptelefonu}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="evtelefonu">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'evtelefonu'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.evtelefonu}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="departmankod">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'departmankod'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.departmankod}}</td>
+                                </ng-container> 
+                                <ng-container matColumnDef="departmanad">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'departmanad'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.departmanad}}</td>
+                                </ng-container> 
+                                <ng-container matColumnDef="isegiristarihi">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'isegiristarihi'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.isegiristarihi}}</td>
+                                </ng-container> 
+                                <ng-container matColumnDef="istencikistarihi">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'istencikistarihi'}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element.istencikistarihi}}</td>
+                                </ng-container> 
+                              
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                            </table>
+
+                            <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 

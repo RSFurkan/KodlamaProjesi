@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Business.Handlers.Personel.ValidationMessages
 {
-    internal class EntitySpesificMessages : Messages
+    public class EntitySpesificMessages : Messages
     {
     }
 }

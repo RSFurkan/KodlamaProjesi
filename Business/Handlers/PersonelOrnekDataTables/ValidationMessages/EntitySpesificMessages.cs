@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Business.Handlers.PersonelOrnekDataTables.ValidationMessages
 {
-    internal class EntitySpesificMessages : Messages
+    public  class EntitySpesificMessages : Messages
     {
     }
 }

@@ -11,8 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 declare var jQuery: any;
 @Component({
     selector: 'app-department',
-    templateUrl: './department.component.html',
-    styleUrls: ['./department.component.scss']
+    templateUrl: './departman.component.html' 
 })
 
 export class DepartmentComponent implements AfterViewInit, OnInit {
@@ -94,14 +93,24 @@ export class DepartmentComponent implements AfterViewInit, OnInit {
             this.configDataTable();
         })
     }
+    applyFilter(event: Event) {
+		const filterValue = (event.target as HTMLInputElement).value;
+		this.dataSource.filter = filterValue.trim().toLowerCase();
 
+		if (this.dataSource.paginator) {
+			this.dataSource.paginator.firstPage();
+		}
+	}
     configDataTable(): void {
 		this.sort.active = "id";
 		this.sort.direction = "desc";
 		this.dataSource.paginator = this.paginator;
 		this.dataSource.sort = this.sort;
 	}
+    getdepartmanById(id:number)
+    {
 
+    }
 
 
 

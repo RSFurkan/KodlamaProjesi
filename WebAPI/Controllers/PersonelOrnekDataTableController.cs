@@ -34,6 +34,24 @@ namespace WebAPI.Controllers
         }
 
         /// <summary>
+        /// örnek data dto
+        /// </summary>
+        /// <returns></returns>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PersonelOrnekDataTable>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getornekdatasdto")]
+        public async Task<IActionResult> GetOrnekDataDto()
+        {
+            var result = await Mediator.Send(new GetAllPersonelOrnekDataTableDtoQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="obj"></param>

@@ -10,9 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\PersonelUnvans\Commands\" />
     <Folder Include="Handlers\PersonelUnvans\Queries\" />
-    <Folder Include="Handlers\PersonelUnvans\ValidationRules\" />
     <Folder Include="Handlers\Unvans\Commands\" />
     <Folder Include="Handlers\Unvans\Queries\" />
     <Folder Include="Handlers\Unvans\ValidationRules\" />

@@ -11,8 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 declare var jQuery: any;
 @Component({
     selector: 'app-personel-ornek-data-table',
-    templateUrl: './personel-ornek-data-table.component.html',
-    styleUrls: ['./personel-ornek-data-table.component.scss']
+    templateUrl: './personel-ornek-data-table.component.html' 
 })
 
 export class PersonelOrnekTableComponent implements AfterViewInit, OnInit {
@@ -22,7 +21,7 @@ export class PersonelOrnekTableComponent implements AfterViewInit, OnInit {
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
 
-    displayedColumns: string[] = ['id', 'sicilnumrasi', 'ad', 'soyad', 'cinsiyet', 'ceptelefonu', 'evtelefonu', 'mailadresi', 'departmankod', 'departmanad', 'isegiristarihi', 'istencikistarihi', 'update', 'delete'];
+    displayedColumns: string[] = ['id', 'sicilnumrasi', 'ad', 'soyad', 'cinsiyet', 'ceptelefonu', 'evtelefonu', 'mailadresi', 'departmankod', 'departmanad', 'isegiristarihi', 'istencikistarihi'];
 
     personelOrnekTableList: PersonelOrnekDataTableDto[];
     personelOrnekTable: PersonelOrnekDataTableDto = new PersonelOrnekDataTableDto();
@@ -99,6 +98,13 @@ export class PersonelOrnekTableComponent implements AfterViewInit, OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
     }
+    applyFilter(event: Event) {
+		const filterValue = (event.target as HTMLInputElement).value;
+		this.dataSource.filter = filterValue.trim().toLowerCase();
 
+		if (this.dataSource.paginator) {
+			this.dataSource.paginator.firstPage();
+		}
+	}
 
 }

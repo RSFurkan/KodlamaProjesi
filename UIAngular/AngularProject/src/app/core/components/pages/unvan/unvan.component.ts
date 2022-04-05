@@ -11,8 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 declare var jQuery: any;
 @Component({
     selector: 'app-unvan',
-    templateUrl: './unvan.component.html',
-    styleUrls: ['./unvan.component.scss']
+    templateUrl: './unvan.component.html'  
 })
 
 
@@ -64,16 +63,12 @@ export class UnvanComponent implements AfterViewInit, OnInit {
         })
     }
 
-    update() {
-
-        this.service.update(this.unvan).subscribe(data => {
-
+    update() { 
+        this.service.update(this.unvan).subscribe(data => { 
             var index = this.unvanList.findIndex(x => x.id == this.unvan.id);
             this.unvanList[index] = this.unvan;
             console.log(data);
-            this.configDataTable();
-
-
+            this.configDataTable(); 
         })
     }
     createAddForm() {
@@ -91,6 +86,14 @@ export class UnvanComponent implements AfterViewInit, OnInit {
             this.configDataTable();
         })
     }
+    applyFilter(event: Event) {
+		const filterValue = (event.target as HTMLInputElement).value;
+		this.dataSource.filter = filterValue.trim().toLowerCase();
+
+		if (this.dataSource.paginator) {
+			this.dataSource.paginator.firstPage();
+		}
+	}
     configDataTable(): void {
 		this.sort.active = "id";
 		this.sort.direction = "desc";

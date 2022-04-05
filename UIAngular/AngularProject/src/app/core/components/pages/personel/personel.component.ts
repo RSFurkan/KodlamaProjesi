@@ -8,8 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 declare var jQuery: any;
 @Component({
     selector: 'app-personel',
-    templateUrl: './personel.component.html',
-    styleUrls: ['./personel.component.scss']
+    templateUrl: './personel.component.html' 
 })
 
 export class PersonelComponent implements AfterViewInit, OnInit {
@@ -18,7 +17,7 @@ export class PersonelComponent implements AfterViewInit, OnInit {
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
 
-    displayedColumns: string[] = [  'id', 'sicilNumarasi', 'ad',  'soyad', 'sicilnumarasi', 'ceptelefonu',   'evtelefonu',  'mail',  'update', 'delete'];
+    displayedColumns: string[] = [  'id', 'sicilNumarasi', 'ad',  'soyad',  'ceptelefonu',   'evtelefonu',  'mail',  'update', 'delete'];
 
     personelList: Personel[];
     personel: Personel = new Personel();
@@ -63,7 +62,14 @@ export class PersonelComponent implements AfterViewInit, OnInit {
 
         })
     }
+    applyFilter(event: Event) {
+		const filterValue = (event.target as HTMLInputElement).value;
+		this.dataSource.filter = filterValue.trim().toLowerCase();
 
+		if (this.dataSource.paginator) {
+			this.dataSource.paginator.firstPage();
+		}
+	}
     updatePersonel() {
 
         this.personelService.update(this.personel).subscribe(data => {
@@ -102,5 +108,9 @@ export class PersonelComponent implements AfterViewInit, OnInit {
 		this.dataSource.paginator = this.paginator;
 		this.dataSource.sort = this.sort;
 	}
+    getPersonelById(id:number)
+    {
+        
+    }
 
 }

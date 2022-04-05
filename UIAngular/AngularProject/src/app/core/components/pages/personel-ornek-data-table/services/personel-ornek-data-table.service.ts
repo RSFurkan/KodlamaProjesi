@@ -14,7 +14,7 @@ export class PersonelOrnekDataTableService
 {
     constructor(private httpClient: HttpClient) { }
     getList(): Observable<PersonelOrnekDataTableDto[]> {
-        return this.httpClient.get<PersonelOrnekDataTableDto[]>(environment.getApiUrl + '/personelornekdatatable/getall')
+        return this.httpClient.get<PersonelOrnekDataTableDto[]>(environment.getApiUrl + '/personelornekdatatable/getornekdatasdto')
     }
 
     add(obj: PersonelOrnekDataTable): Observable<any> {
