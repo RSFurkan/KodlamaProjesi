@@ -9,8 +9,7 @@ namespace Entities.Concrete
         public int PersonelId { get; set; }
         public Personel Personel { get; set; }
         public DateTime IseGirisTarihi { get; set; }
-        public DateTime IstenCikisTarihi { get; set; }
-         
+        public DateTime IstenCikisTarihi { get; set; } 
 
     }
 }

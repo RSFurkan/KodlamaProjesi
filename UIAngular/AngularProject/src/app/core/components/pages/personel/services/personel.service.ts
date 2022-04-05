@@ -12,19 +12,19 @@ import { Personel } from '../models/personel';
 export class PersonelService
 {
     constructor(private httpClient: HttpClient) { }
-    getPersonelList(): Observable<Personel[]> {
+    getList(): Observable<Personel[]> {
         return this.httpClient.get<Personel[]>(environment.getApiUrl + '/personel/getall')
     }
 
-    addPersonel(obj: Personel): Observable<any> {
+    add(obj: Personel): Observable<any> {
 
         return this.httpClient.post(environment.getApiUrl + '/personel/', obj, { responseType: 'text' });
     }
 
-    updatePersonel(obj: Personel): Observable<any> {
+    update(obj: Personel): Observable<any> {
         return this.httpClient.put(environment.getApiUrl + '/personel/', obj, { responseType: 'text' });
     }
-    deletePersonel(id: number) {
+    delete(id: number) {
         return this.httpClient.request('delete', environment.getApiUrl + '/personel/', { body: { id: id } });
       }
 }

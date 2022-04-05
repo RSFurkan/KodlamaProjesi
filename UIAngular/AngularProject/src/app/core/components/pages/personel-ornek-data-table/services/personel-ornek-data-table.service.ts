@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment'; 
-import { PersonelOrnekDataTable } from '../personel-ornek-data-table';
+import { PersonelOrnekDataTable } from '../models/personel-ornek-data-table';
+import { PersonelOrnekDataTableDto } from '../models/personel-ornek-data-table-dto';
 
 @Injectable({
     providedIn: 'root'
@@ -12,8 +13,8 @@ import { PersonelOrnekDataTable } from '../personel-ornek-data-table';
 export class PersonelOrnekDataTableService
 {
     constructor(private httpClient: HttpClient) { }
-    getList(): Observable<PersonelOrnekDataTable[]> {
-        return this.httpClient.get<PersonelOrnekDataTable[]>(environment.getApiUrl + '/personelornekdatatable/getall')
+    getList(): Observable<PersonelOrnekDataTableDto[]> {
+        return this.httpClient.get<PersonelOrnekDataTableDto[]>(environment.getApiUrl + '/personelornekdatatable/getall')
     }
 
     add(obj: PersonelOrnekDataTable): Observable<any> {

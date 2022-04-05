@@ -1,4 +1,4 @@
-export class Personel
+export class PersonelOrnekDataTableDto
 {
     id?: number; 
     sicilNumarasi?: string;
@@ -8,6 +8,8 @@ export class Personel
     cepTelefonu?: string; 
     evTelefonu: string;  
     mailAdresi?: string;  
-    isDeleted?: boolean;
-
+    kod?: string;
+    departmentAd?: string;
+    iseGirisTarihi?: (Date | any);
+    istenCikisTarihi?: (Date | any);
 }
