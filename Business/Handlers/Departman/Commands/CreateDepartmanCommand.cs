@@ -9,6 +9,7 @@ using System.Threading;
 using DataAccess.Abstract;
 using System.Linq;
 using Business.Constants;
+using Business.Handlers.Departman.ValidationRules;
 
 namespace Business.Handlers.Departman.Commands
 {
@@ -27,6 +28,7 @@ namespace Business.Handlers.Departman.Commands
                 _departmanRepository = departmanRepository;
                 _mediator = mediator;
             }
+           // [ValidationAspect(typeof(CreateDepartmentValidator))] 
             public async Task<IResult> Handle(CreateDepartmanCommand request, CancellationToken cancellationToken)
             {
                 var isthereRecord = _departmanRepository.Query().Any(x => x.Kod == request.Kod);

@@ -10,7 +10,9 @@ namespace Business.Constants
         public static string Deleted => "Deleted";
         public static string Updated => "Updated";
         public static string AlreadyExist => "AlreadyExist";
+        public static string Required => "Required";
 
         
+
     }
 }

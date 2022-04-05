@@ -10,28 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\Departman\ValidationMessages\" />
-    <Folder Include="Handlers\Departman\Queries\" />
-    <Folder Include="Handlers\PersonelDepartman\Commands\" />
-    <Folder Include="Handlers\PersonelDepartman\Queries\" />
-    <Folder Include="Handlers\PersonelDepartman\ValidationMessages\" />
-    <Folder Include="Handlers\PersonelDepartman\ValidationRules\" />
-    <Folder Include="Handlers\PersonelOrnekDataTable\Commands\" />
-    <Folder Include="Handlers\PersonelOrnekDataTable\Queries\" />
-    <Folder Include="Handlers\PersonelOrnekDataTable\ValidationMessages\" />
-    <Folder Include="Handlers\PersonelOrnekDataTable\ValidationRules\" />
-    <Folder Include="Handlers\PersonelUnvan\Commands\" />
-    <Folder Include="Handlers\PersonelUnvan\Queries\" />
-    <Folder Include="Handlers\PersonelUnvan\ValidationMessages\" />
-    <Folder Include="Handlers\PersonelUnvan\ValidationRules\" />
-    <Folder Include="Handlers\Personel\Commands\" />
-    <Folder Include="Handlers\Personel\Queries\" />
-    <Folder Include="Handlers\Personel\ValidationMessages\" />
-    <Folder Include="Handlers\Personel\ValidationRules\" />
-    <Folder Include="Handlers\Unvan\Commands\" />
-    <Folder Include="Handlers\Unvan\Queries\" />
-    <Folder Include="Handlers\Unvan\ValidationMessages\" />
-    <Folder Include="Handlers\Unvan\ValidationRules\" />
+    <Folder Include="Handlers\PersonelUnvans\Commands\" />
+    <Folder Include="Handlers\PersonelUnvans\Queries\" />
+    <Folder Include="Handlers\PersonelUnvans\ValidationRules\" />
+    <Folder Include="Handlers\Unvans\Commands\" />
+    <Folder Include="Handlers\Unvans\Queries\" />
+    <Folder Include="Handlers\Unvans\ValidationRules\" />
   </ItemGroup>
 
   <ItemGroup>
